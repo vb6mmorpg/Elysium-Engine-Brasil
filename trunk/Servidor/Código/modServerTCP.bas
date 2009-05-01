@@ -159,10 +159,10 @@ Sub HandleData(ByVal Index As Long, ByVal Data As String)
                     Next
 
                     If Not AccountExist(Name) Then
+                        Call PlainMsg(Index, "Sua conta foi criada com sucesso.", 1)
                         Call AddAccount(Index, Name, Password)
                         Call TextAdd(frmServer.txtText(0), "Conta " & Name & " foi criada.", True)
-                        Call AddLog("Account " & Name & " foi criada.", PLAYER_LOG)
-                        Call PlainMsg(Index, "Sua conta foi criada!!", 1)
+                        Call AddLog("Conta " & Name & " foi criada.", PLAYER_LOG)
                     Else
                         Call PlainMsg(Index, "Desculpe, essa conta já foi pega!", 1)
                     End If

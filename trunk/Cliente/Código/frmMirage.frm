@@ -2491,7 +2491,6 @@ Begin VB.Form frmMirage
       _ExtentY        =   1561
       _Version        =   393217
       BackColor       =   16744576
-      Enabled         =   -1  'True
       ScrollBars      =   2
       Appearance      =   0
       TextRTF         =   $"frmMirage.frx":383E6
@@ -3632,7 +3631,7 @@ Private Sub AddStr_Click()
 End Sub
 
 Private Sub chksound_Click()
-    Call PutVar(App.Path & "\config.ini", "CONFIG", "Sound", chkSound.Value)
+    Call PutVar(App.Path & "\config.ini", "CONFIG", "Sound", chksound.Value)
 End Sub
 
 Private Sub chkbubblebar_Click()
@@ -4055,12 +4054,14 @@ Dim ii As Long
 
     ' The Guild Maker
     If KeyCode = vbKeyF5 Then
-        frmMirage.picGuildAdmin.Visible = True
-        frmMirage.picInv3.Visible = False
-        frmMirage.picGuild.Visible = False
-        frmMirage.picEquip.Visible = False
-        frmMirage.picPlayerSpells.Visible = False
-        frmMirage.picWhosOnline.Visible = False
+        If Player(MyIndex).Guildaccess = 3 Then
+            frmMirage.picGuildAdmin.Visible = True
+            frmMirage.picInv3.Visible = False
+            frmMirage.picGuild.Visible = False
+            frmMirage.picEquip.Visible = False
+            frmMirage.picPlayerSpells.Visible = False
+            frmMirage.picWhosOnline.Visible = False
+        End If
       End If
       
     If KeyCode = vbKeyInsert Then
