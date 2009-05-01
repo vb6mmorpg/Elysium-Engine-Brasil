@@ -1536,6 +1536,8 @@ Sub CheckPlayerLevelUp(ByVal Index As Long)
                             Call SetPlayerPOINTS(Index, GetPlayerPOINTS(Index) + i)
                             Call SetPlayerExp(Index, d)
                             C = C + 1
+                        Else
+                            Exit Do
                         End If
                     End If
 
