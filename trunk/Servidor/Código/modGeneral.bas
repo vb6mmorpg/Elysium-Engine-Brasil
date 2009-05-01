@@ -11,7 +11,7 @@ Public Declare Function GetTickCount _
 ' Constante de versões
 Public Const CLIENT_MAJOR = 2
 Public Const CLIENT_MINOR = 5
-Public Const CLIENT_REVISION = 4
+Public Const CLIENT_REVISION = 5
 
 ' Senha de segurança
 Public Const SEC_CODE = "www.mmodev.com.br"
