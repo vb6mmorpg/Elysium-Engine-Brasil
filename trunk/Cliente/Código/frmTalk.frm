@@ -197,7 +197,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-' Copyright (c) 2008 - Elysium Source. Alguns direitos reservados.
+' Copyright (c) 2009 - Elysium Source. Alguns direitos reservados.
 ' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br
 ' Este código está licensiado sob a licença EGL.
 
@@ -215,7 +215,7 @@ Dim Ending As String
         If FileExist("GUI\content" & Ending) Then frmNewChar.Picture = LoadPicture(App.Path & "\GUI\content" & Ending)
     Next I
     
-    Picsprites.Picture = LoadPicture(App.Path & "\GFX\sprites.bmp")
+    picSprites.Picture = LoadPicture(App.Path & "\GFX\sprites.bmp")
 End Sub
 
 Private Sub lblQuit_Click()
@@ -271,13 +271,13 @@ Private Sub Timer1_Timer()
             Picpic.Height = SIZE_Y
             Picture4.Width = SIZE_X + 4
             Picture4.Height = SIZE_Y + 4
-            Call BitBlt(Picpic.hDC, 0, 0, SIZE_X, SIZE_Y, Picsprites.hDC, animi * SIZE_X, Int(Npc(SpeechConvo3).Sprite) * SIZE_Y - (SIZE_Y - PIC_Y), SRCCOPY)
+            Call BitBlt(Picpic.hDC, 0, 0, SIZE_X, SIZE_Y, picSprites.hDC, animi * SIZE_X, Int(Npc(SpeechConvo3).Sprite) * SIZE_Y - (SIZE_Y - PIC_Y), SRCCOPY)
         Else
             Picpic.Width = SIZE_X
             Picpic.Height = SIZE_Y
             Picture4.Width = SIZE_X + 4
             Picture4.Height = SIZE_Y + 4
-            Call BitBlt(Picpic.hDC, 0, 0, SIZE_X, SIZE_Y, Picsprites.hDC, animi * SIZE_X, Int(Player(MyIndex).Sprite) * SIZE_Y - (SIZE_Y - PIC_Y), SRCCOPY)
+            Call BitBlt(Picpic.hDC, 0, 0, SIZE_X, SIZE_Y, picSprites.hDC, animi * SIZE_X, Int(Player(MyIndex).Sprite) * SIZE_Y - (SIZE_Y - PIC_Y), SRCCOPY)
         End If
     End If
 End Sub
