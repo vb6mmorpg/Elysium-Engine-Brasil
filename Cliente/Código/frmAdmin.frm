@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Begin VB.Form frmadmin 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Painel Administrativo"
@@ -605,7 +605,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-' Copyright (c) 2008 - Elysium Source. Alguns direitos reservados.
+' Copyright (c) 2009 - Elysium Source. Alguns direitos reservados.
 ' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br
 ' Este código está licensiado sob a licença EGL.
 

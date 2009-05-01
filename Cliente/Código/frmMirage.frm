@@ -2491,6 +2491,7 @@ Begin VB.Form frmMirage
       _ExtentY        =   1561
       _Version        =   393217
       BackColor       =   16744576
+      Enabled         =   -1  'True
       ScrollBars      =   2
       Appearance      =   0
       TextRTF         =   $"frmMirage.frx":383E6
@@ -3602,7 +3603,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-' Copyright (c) 2008 - Elysium Source. Alguns direitos reservados.
+' Copyright (c) 2009 - Elysium Source. Alguns direitos reservados.
 ' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br
 ' Este código está licensiado sob a licença EGL.
 

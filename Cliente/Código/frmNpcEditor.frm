@@ -931,7 +931,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-' Copyright (c) 2008 - Elysium Source. Alguns direitos reservados.
+' Copyright (c) 2009 - Elysium Source. Alguns direitos reservados.
 ' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br
 ' Este código está licensiado sob a licença EGL.
 
@@ -1016,13 +1016,17 @@ End Sub
 
 Private Sub cmdOk_Click()
     If IsNumeric(txtexp.Text) And IsNumeric(txthp.Text) And IsNumeric(txtfor.Text) And IsNumeric(txtdef.Text) And IsNumeric(txtagi.Text) And IsNumeric(txtmagi.Text) Then
-    If Val(txtexp.Text) > 0 And Val(txthp.Text) > 0 And Val(txtfor.Text) > 0 And Val(txtagi.Text) > 0 And Val(txtdef.Text) > 0 And Val(txtmagi.Text) > 0 Then
-        Call NpcEditorOk
+        If Val(txtexp.Text) >= 0 And Val(txthp.Text) >= 0 And Val(txtfor.Text) >= 0 And Val(txtagi.Text) >= 0 And Val(txtdef.Text) >= 0 And Val(txtmagi.Text) >= 0 Then
+            If Val(txtexp.Text) > 2147483647 And Val(txthp.Text) > 2147483647 And Val(txtfor.Text) > 2147483647 And Val(txtagi.Text) > 2147483647 And Val(txtdef.Text) > 2147483647 And Val(txtmagi.Text) > 2147483647 Then
+                MsgBox ("Você não pode usar números tão altos!")
+            Else
+                Call NpcEditorOk
+            End If
+        Else
+            MsgBox ("Você não pode digitar números negativos!")
+        End If
     Else
-        MsgBox ("Você não pode digitar números negativos!")
-    End If
-    Else
-    MsgBox ("Insira apenas números")
+        MsgBox ("Insira apenas números.")
     End If
 End Sub
 

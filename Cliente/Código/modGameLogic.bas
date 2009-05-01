@@ -1,5 +1,5 @@
 Attribute VB_Name = "modGameLogic"
-' Copyright (c) 2008 - Elysium Source. Alguns direitos reservados.
+' Copyright (c) 2009 - Elysium Source. Alguns direitos reservados.
 ' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br
 ' Este código está licensiado sob a licença EGL.
 
@@ -356,7 +356,7 @@ Call InitDirectSM
     InSpawnEditor = False
     
     frmMirage.picItems.Picture = LoadPicture(App.Path & "\GFX\Itens.bmp")
-    frmSpriteChange.Picsprites.Picture = LoadPicture(App.Path & "\GFX\Sprites.bmp")
+    frmSpriteChange.picSprites.Picture = LoadPicture(App.Path & "\GFX\Sprites.bmp")
     
     Call SetStatus("Inicializando Configurações de TCP...")
     DoEvents
@@ -4385,7 +4385,7 @@ End Sub
 
 Public Sub NpcEditorInit()
     
-    frmNpcEditor.Picsprites.Picture = LoadPicture(App.Path & "\GFX\sprites.bmp")
+    frmNpcEditor.picSprites.Picture = LoadPicture(App.Path & "\GFX\sprites.bmp")
     
     frmNpcEditor.txtName.Text = Trim(Npc(EditorIndex).Name)
     frmNpcEditor.txtAttackSay.Text = Trim(Npc(EditorIndex).AttackSay)
@@ -4464,9 +4464,9 @@ End Sub
 
 Public Sub NpcEditorBltSprite()
     If frmNpcEditor.BigNpc.Value = Checked Then
-        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, 64, 64, frmNpcEditor.Picsprites.hDC, 3 * 64, frmNpcEditor.scrlSprite.Value * 64, SRCCOPY)
+        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, 64, 64, frmNpcEditor.picSprites.hDC, 3 * 64, frmNpcEditor.scrlSprite.Value * 64, SRCCOPY)
     Else
-        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, SIZE_X, SIZE_Y, frmNpcEditor.Picsprites.hDC, 3 * SIZE_X, frmNpcEditor.scrlSprite.Value * SIZE_Y - (SIZE_Y - PIC_Y), SRCCOPY)
+        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, SIZE_X, SIZE_Y, frmNpcEditor.picSprites.hDC, 3 * SIZE_X, frmNpcEditor.scrlSprite.Value * SIZE_Y - (SIZE_Y - PIC_Y), SRCCOPY)
     End If
 End Sub
 
