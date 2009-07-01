@@ -356,7 +356,7 @@ Call InitDirectSM
     InSpawnEditor = False
     
     frmMirage.picItems.Picture = LoadPicture(App.Path & "\GFX\Itens.bmp")
-    frmSpriteChange.picSprites.Picture = LoadPicture(App.Path & "\GFX\Sprites.bmp")
+    frmSpriteChange.Picsprites.Picture = LoadPicture(App.Path & "\GFX\Sprites.bmp")
     
     Call SetStatus("Inicializando Configurações de TCP...")
     DoEvents
@@ -2270,8 +2270,8 @@ MyText = frmMirage.txtMyTextBox.Text
         
         If LCase(Mid(MyText, 1, 9)) = "/negociar" Then
             ' Make sure they are actually sending something
-            If Len(MyText) > 7 Then
-                ChatText = Mid(MyText, 8, Len(MyText) - 7)
+            If Len(MyText) > 10 Then
+                ChatText = Mid(MyText, 11, Len(MyText) - 10)
                 Call SendTradeRequest(ChatText)
             Else
                 Call AddText("Use: /negociar <nome do jogar>", AlertColor)
@@ -4385,7 +4385,7 @@ End Sub
 
 Public Sub NpcEditorInit()
     
-    frmNpcEditor.picSprites.Picture = LoadPicture(App.Path & "\GFX\sprites.bmp")
+    frmNpcEditor.Picsprites.Picture = LoadPicture(App.Path & "\GFX\sprites.bmp")
     
     frmNpcEditor.txtName.Text = Trim(Npc(EditorIndex).Name)
     frmNpcEditor.txtAttackSay.Text = Trim(Npc(EditorIndex).AttackSay)
@@ -4464,9 +4464,9 @@ End Sub
 
 Public Sub NpcEditorBltSprite()
     If frmNpcEditor.BigNpc.Value = Checked Then
-        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, 64, 64, frmNpcEditor.picSprites.hDC, 3 * 64, frmNpcEditor.scrlSprite.Value * 64, SRCCOPY)
+        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, 64, 64, frmNpcEditor.Picsprites.hDC, 3 * 64, frmNpcEditor.scrlSprite.Value * 64, SRCCOPY)
     Else
-        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, SIZE_X, SIZE_Y, frmNpcEditor.picSprites.hDC, 3 * SIZE_X, frmNpcEditor.scrlSprite.Value * SIZE_Y - (SIZE_Y - PIC_Y), SRCCOPY)
+        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, SIZE_X, SIZE_Y, frmNpcEditor.Picsprites.hDC, 3 * SIZE_X, frmNpcEditor.scrlSprite.Value * SIZE_Y - (SIZE_Y - PIC_Y), SRCCOPY)
     End If
 End Sub
 
