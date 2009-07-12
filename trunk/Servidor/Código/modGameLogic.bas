@@ -1850,7 +1850,7 @@ Function GetPlayerProtection(ByVal Index As Long) As Long
 
     GetPlayerProtection = 0
 
-    ' Checar por SOFR
+    ' Prevenir subscript out of range
     If IsPlaying(Index) = False Or Index <= 0 Or Index > MAX_PLAYERS Then
         Exit Function
     End If
@@ -1863,16 +1863,16 @@ Function GetPlayerProtection(ByVal Index As Long) As Long
     If ArmorSlot > 0 Then
         GetPlayerProtection = GetPlayerProtection + Item(GetPlayerInvItemNum(Index, ArmorSlot)).Data2
 
-        If GetPlayerInvItemDur(Index, ArmorSlot) > -1 Then
+        If GetPlayerInvItemDur(Index, ArmorSlot) > 0 Then
             Call SetPlayerInvItemDur(Index, ArmorSlot, GetPlayerInvItemDur(Index, ArmorSlot) - 1)
 
             If GetPlayerInvItemDur(Index, ArmorSlot) = 0 Then
-                Call BattleMsg(Index, "Your " & Trim$(Item(GetPlayerInvItemNum(Index, ArmorSlot)).Name) & " has broken.", Yellow, 0)
+                Call BattleMsg(Index, "Sua " & Trim$(Item(GetPlayerInvItemNum(Index, ArmorSlot)).Name) & " quebrou.", Yellow, 0)
                 Call TakeItem(Index, GetPlayerInvItemNum(Index, ArmorSlot), 0)
             Else
 
                 If GetPlayerInvItemDur(Index, ArmorSlot) <= 10 Then
-                    Call BattleMsg(Index, "Your " & Trim$(Item(GetPlayerInvItemNum(Index, ArmorSlot)).Name) & " is about to break! Dur: " & GetPlayerInvItemDur(Index, ArmorSlot) & "/" & Trim$(Item(GetPlayerInvItemNum(Index, ArmorSlot)).Data1), Yellow, 0)
+                    Call BattleMsg(Index, "Sua " & Trim$(Item(GetPlayerInvItemNum(Index, ArmorSlot)).Name) & " está quase quebrando! Dur: " & GetPlayerInvItemDur(Index, ArmorSlot) & "/" & Trim$(Item(GetPlayerInvItemNum(Index, ArmorSlot)).Data1), Yellow, 0)
                 End If
             End If
         End If
@@ -1881,16 +1881,16 @@ Function GetPlayerProtection(ByVal Index As Long) As Long
     If HelmSlot > 0 Then
         GetPlayerProtection = GetPlayerProtection + Item(GetPlayerInvItemNum(Index, HelmSlot)).Data2
 
-        If GetPlayerInvItemDur(Index, HelmSlot) > -1 Then
+        If GetPlayerInvItemDur(Index, HelmSlot) > 0 Then
             Call SetPlayerInvItemDur(Index, HelmSlot, GetPlayerInvItemDur(Index, HelmSlot) - 1)
 
             If GetPlayerInvItemDur(Index, HelmSlot) <= 0 Then
-                Call BattleMsg(Index, "Your " & Trim$(Item(GetPlayerInvItemNum(Index, HelmSlot)).Name) & " has broken.", Yellow, 0)
+                Call BattleMsg(Index, "Seu " & Trim$(Item(GetPlayerInvItemNum(Index, HelmSlot)).Name) & " quebrou.", Yellow, 0)
                 Call TakeItem(Index, GetPlayerInvItemNum(Index, HelmSlot), 0)
             Else
 
                 If GetPlayerInvItemDur(Index, HelmSlot) <= 10 Then
-                    Call BattleMsg(Index, "Your " & Trim$(Item(GetPlayerInvItemNum(Index, HelmSlot)).Name) & " is about to break! Dur: " & GetPlayerInvItemDur(Index, HelmSlot) & "/" & Trim$(Item(GetPlayerInvItemNum(Index, HelmSlot)).Data1), Yellow, 0)
+                    Call BattleMsg(Index, "Seu " & Trim$(Item(GetPlayerInvItemNum(Index, HelmSlot)).Name) & " está quase quebrando! Dur: " & GetPlayerInvItemDur(Index, HelmSlot) & "/" & Trim$(Item(GetPlayerInvItemNum(Index, HelmSlot)).Data1), Yellow, 0)
                 End If
             End If
         End If
@@ -1899,16 +1899,16 @@ Function GetPlayerProtection(ByVal Index As Long) As Long
     If ShieldSlot > 0 Then
         GetPlayerProtection = GetPlayerProtection + Item(GetPlayerInvItemNum(Index, ShieldSlot)).Data2
 
-        If GetPlayerInvItemDur(Index, ShieldSlot) > -1 Then
+        If GetPlayerInvItemDur(Index, ShieldSlot) > 0 Then
             Call SetPlayerInvItemDur(Index, ShieldSlot, GetPlayerInvItemDur(Index, ShieldSlot) - 1)
 
             If GetPlayerInvItemDur(Index, ShieldSlot) <= 0 Then
-                Call BattleMsg(Index, "Your " & Trim$(Item(GetPlayerInvItemNum(Index, ShieldSlot)).Name) & " has broken.", Yellow, 0)
+                Call BattleMsg(Index, "Seu " & Trim$(Item(GetPlayerInvItemNum(Index, ShieldSlot)).Name) & " quebrou.", Yellow, 0)
                 Call TakeItem(Index, GetPlayerInvItemNum(Index, ShieldSlot), 0)
             Else
 
                 If GetPlayerInvItemDur(Index, ShieldSlot) <= 10 Then
-                    Call BattleMsg(Index, "Your " & Trim$(Item(GetPlayerInvItemNum(Index, ShieldSlot)).Name) & " is about to break! Dur: " & GetPlayerInvItemDur(Index, ShieldSlot) & "/" & Trim$(Item(GetPlayerInvItemNum(Index, ShieldSlot)).Data1), Yellow, 0)
+                    Call BattleMsg(Index, "Seu " & Trim$(Item(GetPlayerInvItemNum(Index, ShieldSlot)).Name) & " está quase quebrando! Dur: " & GetPlayerInvItemDur(Index, ShieldSlot) & "/" & Trim$(Item(GetPlayerInvItemNum(Index, ShieldSlot)).Data1), Yellow, 0)
                 End If
             End If
         End If
