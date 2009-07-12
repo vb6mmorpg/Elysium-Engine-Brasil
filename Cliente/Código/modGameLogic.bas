@@ -4239,6 +4239,12 @@ Dim I As Long
             frmItemEditor.chkBow.Value = Unchecked
         End If
         
+        If Item(EditorIndex).Data1 > 0 Then
+            frmItemEditor.chkRepair.Value = Checked
+        Else
+            frmItemEditor.chkRepair.Value = Unchecked
+        End If
+        
         frmItemEditor.cmbBow.Clear
         If frmItemEditor.chkBow.Value = Checked Then
             For I = 1 To 100

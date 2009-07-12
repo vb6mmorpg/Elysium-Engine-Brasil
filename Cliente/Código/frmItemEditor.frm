@@ -68,11 +68,28 @@ Begin VB.Form frmItemEditor
       Top             =   480
       Visible         =   0   'False
       Width           =   3135
+      Begin VB.CheckBox chkRepair 
+         Caption         =   "Reparável?"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   6.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   270
+         Left            =   1920
+         TabIndex        =   93
+         Top             =   210
+         Width           =   1095
+      End
       Begin VB.HScrollBar scrlMagicReq 
          Height          =   255
          Left            =   120
          Max             =   10000
-         TabIndex        =   83
+         TabIndex        =   82
          Top             =   3480
          Width           =   2895
       End
@@ -133,23 +150,6 @@ Begin VB.Form frmItemEditor
          Top             =   480
          Width           =   2895
       End
-      Begin VB.CheckBox chkRepair 
-         Caption         =   "Consertável?"
-         BeginProperty Font 
-            Name            =   "Tahoma"
-            Size            =   6.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   270
-         Left            =   1920
-         TabIndex        =   82
-         Top             =   240
-         Width           =   1095
-      End
       Begin VB.Label Label30 
          Alignment       =   1  'Right Justify
          Caption         =   "0"
@@ -164,7 +164,7 @@ Begin VB.Form frmItemEditor
          EndProperty
          Height          =   375
          Left            =   1800
-         TabIndex        =   85
+         TabIndex        =   84
          Top             =   3240
          Width           =   1215
       End
@@ -181,7 +181,7 @@ Begin VB.Form frmItemEditor
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   84
+         TabIndex        =   83
          Top             =   3240
          Width           =   1815
       End
@@ -724,7 +724,7 @@ Begin VB.Form frmItemEditor
       EndProperty
       Height          =   3375
       Left            =   3960
-      TabIndex        =   86
+      TabIndex        =   85
       Top             =   600
       Visible         =   0   'False
       Width           =   3135
@@ -733,7 +733,7 @@ Begin VB.Form frmItemEditor
          Left            =   240
          Max             =   255
          Min             =   1
-         TabIndex        =   91
+         TabIndex        =   90
          Top             =   1920
          Value           =   1
          Width           =   2655
@@ -743,7 +743,7 @@ Begin VB.Form frmItemEditor
          Left            =   240
          Max             =   255
          Min             =   1
-         TabIndex        =   87
+         TabIndex        =   86
          Top             =   840
          Value           =   1
          Width           =   2655
@@ -762,7 +762,7 @@ Begin VB.Form frmItemEditor
          EndProperty
          Height          =   255
          Left            =   1200
-         TabIndex        =   93
+         TabIndex        =   92
          Top             =   1680
          Width           =   495
       End
@@ -780,7 +780,7 @@ Begin VB.Form frmItemEditor
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   92
+         TabIndex        =   91
          Top             =   1680
          Width           =   1095
       End
@@ -798,7 +798,7 @@ Begin VB.Form frmItemEditor
          EndProperty
          Height          =   255
          Left            =   1200
-         TabIndex        =   90
+         TabIndex        =   89
          Top             =   600
          Width           =   495
       End
@@ -816,7 +816,7 @@ Begin VB.Form frmItemEditor
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   89
+         TabIndex        =   88
          Top             =   600
          Width           =   1095
       End
@@ -832,7 +832,7 @@ Begin VB.Form frmItemEditor
          EndProperty
          Height          =   375
          Left            =   240
-         TabIndex        =   88
+         TabIndex        =   87
          Top             =   600
          Width           =   2760
       End
