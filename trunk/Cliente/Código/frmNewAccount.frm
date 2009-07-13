@@ -241,12 +241,12 @@ Dim I As Long
     
         Call MenuState(MENU_STATE_NEWACCOUNT)
         
-        Call DestroyDirectX
-        Call StopMidi
-        InGame = False
-        frmMirage.Socket.Close
-        frmMainMenu.Visible = True
-        Connucted = False
+        'Call DestroyDirectX
+        'Call StopMidi
+        'InGame = False
+        'frmMirage.Socket.Close
+        'frmMainMenu.Visible = True
+        'Connucted = False
         
         Unload Me
     End If
