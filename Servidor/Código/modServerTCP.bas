@@ -163,6 +163,7 @@ Sub HandleData(ByVal Index As Long, ByVal Data As String)
                         Call AddAccount(Index, Name, Password)
                         Call TextAdd(frmServer.txtText(0), "Conta " & Name & " foi criada.", True)
                         Call AddLog("Conta " & Name & " foi criada.", PLAYER_LOG)
+                        Call CloseSocket(Index)
                     Else
                         Call PlainMsg(Index, "Desculpe, essa conta já foi pega!", 1)
                     End If
