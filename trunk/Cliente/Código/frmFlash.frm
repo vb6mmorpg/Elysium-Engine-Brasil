@@ -128,4 +128,3 @@ Private Sub Label1_Click()
     Call PutVar(App.Path & "\config.ini", "CONFIG", "Sound", frmMirage.chkSound.Value)
     Unload Me
 End Sub
-
