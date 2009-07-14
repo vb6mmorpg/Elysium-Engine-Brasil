@@ -1,6 +1,7 @@
 VERSION 5.00
+Object = "{665BF2B8-F41F-4EF4-A8D0-303FBFFC475E}#2.0#0"; "cmcs21.ocx"
 Begin VB.Form frmEditor 
-   Caption         =   "Konfuze Script Editor"
+   Caption         =   "EEB - Editor de Scripts"
    ClientHeight    =   9000
    ClientLeft      =   165
    ClientTop       =   555
@@ -17,12 +18,25 @@ Begin VB.Form frmEditor
       Left            =   1193
       ScaleHeight     =   7425
       ScaleWidth      =   9585
-      TabIndex        =   2
+      TabIndex        =   0
       Top             =   773
       Visible         =   0   'False
       Width           =   9615
+      Begin VB.TextBox txtCommands 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00C0C0C0&
+         BorderStyle     =   0  'None
+         Height          =   6975
+         Left            =   -20
+         MultiLine       =   -1  'True
+         ScrollBars      =   2  'Vertical
+         TabIndex        =   2
+         Text            =   "frmEditor.frx":058A
+         Top             =   0
+         Width           =   9615
+      End
       Begin VB.CommandButton Command1 
-         Caption         =   "Ok"
+         Caption         =   "OK"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   8.25
@@ -34,22 +48,9 @@ Begin VB.Form frmEditor
          EndProperty
          Height          =   255
          Left            =   8160
-         TabIndex        =   0
+         TabIndex        =   1
          Top             =   7080
          Width           =   1335
-      End
-      Begin VB.TextBox txtCommands 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00C0C0C0&
-         BorderStyle     =   0  'None
-         Height          =   6975
-         Left            =   -20
-         MultiLine       =   -1  'True
-         ScrollBars      =   2  'Vertical
-         TabIndex        =   3
-         Text            =   "frmEditor.frx":058A
-         Top             =   0
-         Width           =   9615
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -57,83 +58,91 @@ Begin VB.Form frmEditor
          Caption         =   "List Of Commands Typed Out By: Bwoch and edited by Pingu"
          Height          =   195
          Left            =   120
-         TabIndex        =   1
+         TabIndex        =   3
          Top             =   7080
          Width           =   4335
       End
    End
+   Begin CodeSenseCtl.CodeSense RT 
+      Height          =   4455
+      Left            =   0
+      OleObjectBlob   =   "frmEditor.frx":43B2
+      TabIndex        =   4
+      Top             =   0
+      Width           =   5055
+   End
    Begin VB.Menu mnuFile 
-      Caption         =   "File"
+      Caption         =   "Arquivo"
       Begin VB.Menu mnuSave 
-         Caption         =   "Save"
+         Caption         =   "Salvar"
          Shortcut        =   ^S
       End
       Begin VB.Menu mnuFileSep2 
          Caption         =   "-"
       End
       Begin VB.Menu mnuExit 
-         Caption         =   "Exit"
+         Caption         =   "Fechar"
       End
    End
    Begin VB.Menu mnuEdit 
-      Caption         =   "Edit"
+      Caption         =   "Editar"
       Begin VB.Menu mnuUndo 
-         Caption         =   "Undo"
+         Caption         =   "Desfazer"
          Shortcut        =   ^Z
       End
       Begin VB.Menu mnuRedo 
-         Caption         =   "Redo"
+         Caption         =   "Refazer"
          Shortcut        =   ^Y
       End
       Begin VB.Menu mnuEditSep1 
          Caption         =   "-"
       End
       Begin VB.Menu mnuCopy 
-         Caption         =   "Copy"
+         Caption         =   "Copiar"
       End
       Begin VB.Menu mnuCut 
-         Caption         =   "Cut"
+         Caption         =   "Recortar"
       End
       Begin VB.Menu mnuPaste 
-         Caption         =   "Paste"
+         Caption         =   "Colar"
       End
       Begin VB.Menu mnuDelete 
-         Caption         =   "Delete"
+         Caption         =   "Excluir"
       End
       Begin VB.Menu mnuEditSep2 
          Caption         =   "-"
       End
       Begin VB.Menu mnuFind 
-         Caption         =   "Find"
+         Caption         =   "Localizar"
          Shortcut        =   ^F
       End
       Begin VB.Menu mnuFindNext 
-         Caption         =   "Find Next"
+         Caption         =   "Localizar Próxima"
          Shortcut        =   {F3}
       End
       Begin VB.Menu mnuReplace 
-         Caption         =   "Replace"
+         Caption         =   "Substituir"
          Shortcut        =   ^H
       End
       Begin VB.Menu mnuGoLine 
-         Caption         =   "Go To Line"
+         Caption         =   "Ir Para Linha"
          Shortcut        =   ^G
       End
       Begin VB.Menu mnuEditSep3 
          Caption         =   "-"
       End
       Begin VB.Menu mnuSelAll 
-         Caption         =   "Select All"
+         Caption         =   "Selecionar Tudo"
          Shortcut        =   ^A
       End
       Begin VB.Menu mnuSelLine 
-         Caption         =   "Select Current Line"
+         Caption         =   "Selecionar Linha Atual"
       End
    End
    Begin VB.Menu mnuHelp 
-      Caption         =   "Help"
+      Caption         =   "Ajuda"
       Begin VB.Menu mnuSC 
-         Caption         =   "Script Commands"
+         Caption         =   "Comandos de Script"
       End
    End
 End
@@ -210,7 +219,7 @@ ResetAllEditVals
 GetEditColors
 EditorSetVals
 
-If Dir(App.Path & "\" & AFileName) <> "" Then
+If Dir(App.Path & "\" & AFileName) <> vbNullString Then
     hFile = FreeFile
     Open App.Path & "\" & AFileName For Input As #hFile
         frmEditor.RT.Text = Input$(LOF(hFile), hFile)
@@ -271,11 +280,11 @@ End Sub
 Private Sub mnuCut_Click()
     Clipboard.Clear
     Clipboard.SetText RT.SelText
-    RT.SelText = ""
+    RT.SelText = vbNullString
 End Sub
 
 Private Sub mnuDelete_Click()
-    RT.SelText = ""
+    RT.SelText = vbNullString
 End Sub
 
 Private Sub mnuExit_Click()
@@ -313,7 +322,7 @@ Private Sub mnuSave_Click()
     
     ' If you are making this editor edit more than scripts...
     ' Find a way to change this!
-    Call SendData("NEWMAIN" & SEP_CHAR & RT.Text & SEP_CHAR & END_CHAR)
+    Call SendData("NEWMAIN" & SEP_CHAR & RT.Text & END_CHAR)
 
     Unload Me
 End Sub
@@ -370,7 +379,7 @@ Private Function RT_CodeListChar(ByVal Control As CodeSenseCtl.ICodeSense, ByVal
 End Function
 Private Function RT_CodeListSelChange(ByVal Control As CodeSenseCtl.ICodeSense, ByVal ListCtrl As CodeSenseCtl.ICodeList, ByVal lItem As Long) As String
     sIntellText = ListCtrl.GetItemText(lItem)
-    RT_CodeListSelChange = ""
+    RT_CodeListSelChange = vbNullString
 End Function
 Private Function RT_CodeListSelMade(ByVal Control As CodeSenseCtl.ICodeSense, ByVal ListCtrl As CodeSenseCtl.ICodeList) As Boolean
     AddIntellWord
@@ -410,7 +419,7 @@ End Sub
 
 Private Sub AddIntellWord()
 Dim R As CodeSenseCtl.Range
-    If sIntellText <> "" Then
+    If sIntellText <> vbNullString Then
         Set R = RT.GetSel(False)
         R.StartColNo = LBoxPos
         R.EndColNo = R.EndColNo
@@ -420,6 +429,6 @@ Dim R As CodeSenseCtl.Range
         RT.SelText = sIntellText
         RT.SetSel R, False
 
-        sIntellText = ""
+        sIntellText = vbNullString
     End If
 End Sub

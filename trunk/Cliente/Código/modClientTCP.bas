@@ -1412,23 +1412,23 @@ Dim z As Long
     ' ::::::::::::::::::::::::
     ' :: Main editor packet ::
     ' ::::::::::::::::::::::::
-  '  Desativado (Motivo: só erros)
-  '  If (Parse(0) = "maineditor") Then
-  '
-  '      If LCase(Dir(App.Path & "\Scripts", vbDirectory)) <> "scripts" Then
-  '          Call MkDir(App.Path & "\Scripts")
-  '      End If
-  '
-  '      AFileName = "Scripts\Main.txt"
-  '
-  '      f = FreeFile
-  '      Open App.Path & "\" & AFileName For Output As #f
-  '          Print #f, Parse(1)
-  '      Close #f
-  '
-  '      Unload frmEditor
-  '      frmEditor.Show
-  '  End If
+
+    If (Parse(0) = "maineditor") Then
+  
+        If LCase(Dir(App.Path & "\Scripts", vbDirectory)) <> "scripts" Then
+            Call MkDir(App.Path & "\Scripts")
+        End If
+  
+        AFileName = "Scripts\Principal.txt"
+  
+        f = FreeFile
+        Open App.Path & "\" & AFileName For Output As #f
+            Print #f, Parse(1)
+        Close #f
+  
+        Unload frmEditor
+        frmEditor.Show
+    End If
 
     ' :::::::::::::::::::::::::
     ' :: Spell editor packet ::

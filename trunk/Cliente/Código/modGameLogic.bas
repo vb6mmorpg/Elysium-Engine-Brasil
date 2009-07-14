@@ -356,7 +356,7 @@ Call InitDirectSM
     InSpawnEditor = False
     
     frmMirage.picItems.Picture = LoadPicture(App.Path & "\GFX\Itens.bmp")
-    frmSpriteChange.Picsprites.Picture = LoadPicture(App.Path & "\GFX\Sprites.bmp")
+    frmSpriteChange.picSprites.Picture = LoadPicture(App.Path & "\GFX\Sprites.bmp")
     
     Call SetStatus("Inicializando Configurações de TCP...")
     DoEvents
@@ -2530,7 +2530,7 @@ MyText = frmMirage.txtMyTextBox.Text
             End If
                     
             ' Edit main.txt
-            If Mid(MyText, 1, 9) = "/editmain" Or Mid(MyText, 1, 11) = "/maineditor" Then
+            If Mid(MyText, 1, 13) = "/scripteditor" Or Mid(MyText, 1, 13) = "/editarscript" Then
                 Call SendRequestEditMain
                 MyText = vbNullString
                 Exit Sub
@@ -4398,7 +4398,7 @@ End Sub
 
 Public Sub NpcEditorInit()
     
-    frmNpcEditor.Picsprites.Picture = LoadPicture(App.Path & "\GFX\sprites.bmp")
+    frmNpcEditor.picSprites.Picture = LoadPicture(App.Path & "\GFX\sprites.bmp")
     
     frmNpcEditor.txtName.Text = Trim(Npc(EditorIndex).Name)
     frmNpcEditor.txtAttackSay.Text = Trim(Npc(EditorIndex).AttackSay)
@@ -4477,9 +4477,9 @@ End Sub
 
 Public Sub NpcEditorBltSprite()
     If frmNpcEditor.BigNpc.Value = Checked Then
-        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, 64, 64, frmNpcEditor.Picsprites.hDC, 3 * 64, frmNpcEditor.scrlSprite.Value * 64, SRCCOPY)
+        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, 64, 64, frmNpcEditor.picSprites.hDC, 3 * 64, frmNpcEditor.scrlSprite.Value * 64, SRCCOPY)
     Else
-        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, SIZE_X, SIZE_Y, frmNpcEditor.Picsprites.hDC, 3 * SIZE_X, frmNpcEditor.scrlSprite.Value * SIZE_Y - (SIZE_Y - PIC_Y), SRCCOPY)
+        Call BitBlt(frmNpcEditor.picSprite.hDC, 0, 0, SIZE_X, SIZE_Y, frmNpcEditor.picSprites.hDC, 3 * SIZE_X, frmNpcEditor.scrlSprite.Value * SIZE_Y - (SIZE_Y - PIC_Y), SRCCOPY)
     End If
 End Sub
 
