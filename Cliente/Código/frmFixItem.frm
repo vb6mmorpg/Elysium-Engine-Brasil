@@ -108,9 +108,9 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-
-' Copyright (c) 2006 Elysium Source. All rights reserved.
-' This code is licensed under the Elysium General License.
+' Copyright (c) 2009 - Elysium Source. Alguns direitos reservados.
+' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br
+' Este código está licensiado sob a licença EGL.
 
 Private Sub chkFix_Click()
     Call SendData("fixitem" & SEP_CHAR & cmbItem.ListIndex + 1 & END_CHAR)

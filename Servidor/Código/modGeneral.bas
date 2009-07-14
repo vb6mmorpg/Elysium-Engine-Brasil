@@ -1,5 +1,5 @@
 Attribute VB_Name = "modGeneral"
-' Copyright (c) 2008 - Elysium Source. Alguns direitos reservados.
+' Copyright (c) 2009 - Elysium Source. Alguns direitos reservados.
 ' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br
 ' Este código está licensiado sob a licença EGL.
 
@@ -10,8 +10,8 @@ Public Declare Function GetTickCount _
 
 ' Constante de versões
 Public Const CLIENT_MAJOR = 2
-Public Const CLIENT_MINOR = 5
-Public Const CLIENT_REVISION = 5
+Public Const CLIENT_MINOR = 6
+Public Const CLIENT_REVISION = 0
 
 ' Senha de segurança
 Public Const SEC_CODE = "www.mmodev.com.br"
@@ -1568,7 +1568,7 @@ Sub InitServer()
     ServerLog = True
 
     If Not FileExist("Dados.ini") Then
-        SpecialPutVar App.Path & "\Dados.ini", "CONFIG", "GameName", "Elysium Engine Brasil v2.5.4"
+        SpecialPutVar App.Path & "\Dados.ini", "CONFIG", "GameName", "Elysium Engine Brasil v2.6"
         SpecialPutVar App.Path & "\Dados.ini", "CONFIG", "WebSite", "http://www.mmodev.com.br"
         SpecialPutVar App.Path & "\Dados.ini", "CONFIG", "Port", 4000
         SpecialPutVar App.Path & "\Dados.ini", "CONFIG", "HPRegen", 1
