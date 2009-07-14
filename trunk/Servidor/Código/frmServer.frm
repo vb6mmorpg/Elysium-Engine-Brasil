@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "MSWINSCK.OCX"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "mswinsck.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form frmServer 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Elysium Engine Brasil (Servidor)"
@@ -35,7 +35,7 @@ Begin VB.Form frmServer
       _ExtentY        =   7223
       _Version        =   393216
       Tabs            =   4
-      Tab             =   1
+      Tab             =   2
       TabsPerRow      =   4
       TabHeight       =   370
       TabMaxWidth     =   2646
@@ -51,26 +51,26 @@ Begin VB.Form frmServer
       TabCaption(0)   =   "Chat"
       TabPicture(0)   =   "frmServer.frx":058A
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "CustomMsg(0)"
-      Tab(0).Control(1)=   "Say(0)"
-      Tab(0).Control(2)=   "Frame5"
-      Tab(0).Control(3)=   "CustomMsg(1)"
-      Tab(0).Control(4)=   "CustomMsg(2)"
-      Tab(0).Control(5)=   "CustomMsg(3)"
-      Tab(0).Control(6)=   "CustomMsg(4)"
-      Tab(0).Control(7)=   "CustomMsg(5)"
-      Tab(0).Control(8)=   "Say(1)"
-      Tab(0).Control(9)=   "Say(2)"
-      Tab(0).Control(10)=   "Say(3)"
-      Tab(0).Control(11)=   "Say(4)"
-      Tab(0).Control(12)=   "Say(5)"
-      Tab(0).Control(13)=   "SSTab2"
-      Tab(0).Control(14)=   "picCMsg"
-      Tab(0).Control(15)=   "tmrChatLogs"
+      Tab(0).Control(0)=   "tmrChatLogs"
+      Tab(0).Control(1)=   "picCMsg"
+      Tab(0).Control(2)=   "SSTab2"
+      Tab(0).Control(3)=   "Say(5)"
+      Tab(0).Control(4)=   "Say(4)"
+      Tab(0).Control(5)=   "Say(3)"
+      Tab(0).Control(6)=   "Say(2)"
+      Tab(0).Control(7)=   "Say(1)"
+      Tab(0).Control(8)=   "CustomMsg(5)"
+      Tab(0).Control(9)=   "CustomMsg(4)"
+      Tab(0).Control(10)=   "CustomMsg(3)"
+      Tab(0).Control(11)=   "CustomMsg(2)"
+      Tab(0).Control(12)=   "CustomMsg(1)"
+      Tab(0).Control(13)=   "Frame5"
+      Tab(0).Control(14)=   "Say(0)"
+      Tab(0).Control(15)=   "CustomMsg(0)"
       Tab(0).ControlCount=   16
       TabCaption(1)   =   "Jogadores"
       TabPicture(1)   =   "frmServer.frx":05A6
-      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "TPO"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "lvUsers"
@@ -118,45 +118,64 @@ Begin VB.Form frmServer
       Tab(1).ControlCount=   22
       TabCaption(2)   =   "Painel de Controle"
       TabPicture(2)   =   "frmServer.frx":05C2
-      Tab(2).ControlEnabled=   0   'False
+      Tab(2).ControlEnabled=   -1  'True
       Tab(2).Control(0)=   "lblPort"
+      Tab(2).Control(0).Enabled=   0   'False
       Tab(2).Control(1)=   "lblIP"
+      Tab(2).Control(1).Enabled=   0   'False
       Tab(2).Control(2)=   "Label7"
+      Tab(2).Control(2).Enabled=   0   'False
       Tab(2).Control(3)=   "Frame7"
+      Tab(2).Control(3).Enabled=   0   'False
       Tab(2).Control(4)=   "Socket(0)"
+      Tab(2).Control(4).Enabled=   0   'False
       Tab(2).Control(5)=   "Frame1"
+      Tab(2).Control(5).Enabled=   0   'False
       Tab(2).Control(6)=   "Frame2"
+      Tab(2).Control(6).Enabled=   0   'False
       Tab(2).Control(7)=   "Frame3"
+      Tab(2).Control(7).Enabled=   0   'False
       Tab(2).Control(8)=   "PlayerTimer"
+      Tab(2).Control(8).Enabled=   0   'False
       Tab(2).Control(9)=   "tmrShutdown"
+      Tab(2).Control(9).Enabled=   0   'False
       Tab(2).Control(10)=   "tmrGameAI"
+      Tab(2).Control(10).Enabled=   0   'False
       Tab(2).Control(11)=   "tmrSpawnMapItems"
+      Tab(2).Control(11).Enabled=   0   'False
       Tab(2).Control(12)=   "tmrPlayerSave"
+      Tab(2).Control(12).Enabled=   0   'False
       Tab(2).Control(13)=   "Frame6"
+      Tab(2).Control(13).Enabled=   0   'False
       Tab(2).Control(14)=   "picWarp"
+      Tab(2).Control(14).Enabled=   0   'False
       Tab(2).Control(15)=   "Frame9"
+      Tab(2).Control(15).Enabled=   0   'False
       Tab(2).Control(16)=   "picExp"
+      Tab(2).Control(16).Enabled=   0   'False
       Tab(2).Control(17)=   "picMap"
+      Tab(2).Control(17).Enabled=   0   'False
       Tab(2).Control(18)=   "picWeather"
+      Tab(2).Control(18).Enabled=   0   'False
       Tab(2).ControlCount=   19
       TabCaption(3)   =   "Guias"
       TabPicture(3)   =   "frmServer.frx":05DE
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "CharInfo(21)"
+      Tab(3).Control(0)=   "TopicTitle"
       Tab(3).Control(0).Enabled=   0   'False
-      Tab(3).Control(1)=   "CharInfo(22)"
+      Tab(3).Control(1)=   "lstTopics"
       Tab(3).Control(1).Enabled=   0   'False
       Tab(3).Control(2)=   "Label8"
       Tab(3).Control(2).Enabled=   0   'False
-      Tab(3).Control(3)=   "lstTopics"
+      Tab(3).Control(3)=   "CharInfo(22)"
       Tab(3).Control(3).Enabled=   0   'False
-      Tab(3).Control(4)=   "TopicTitle"
+      Tab(3).Control(4)=   "CharInfo(21)"
       Tab(3).Control(4).Enabled=   0   'False
       Tab(3).ControlCount=   5
       Begin VB.CommandButton Command67 
          Caption         =   "Setar Acesso"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   173
          Top             =   3720
          Width           =   1575
@@ -179,7 +198,7 @@ Begin VB.Form frmServer
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   2055
-         Left            =   -68160
+         Left            =   6840
          ScaleHeight     =   135
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   215
@@ -561,7 +580,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command45 
          Caption         =   "Warp"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   146
          Top             =   3480
          Width           =   1575
@@ -579,7 +598,7 @@ Begin VB.Form frmServer
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   3375
-         Left            =   -71520
+         Left            =   3480
          ScaleHeight     =   223
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   223
@@ -770,7 +789,7 @@ Begin VB.Form frmServer
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   1335
-         Left            =   -68160
+         Left            =   6840
          ScaleHeight     =   87
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   215
@@ -824,7 +843,7 @@ Begin VB.Form frmServer
       Begin VB.Frame Frame9 
          Caption         =   "Mapas"
          Height          =   1815
-         Left            =   -70440
+         Left            =   4560
          TabIndex        =   127
          Top             =   480
          Width           =   5535
@@ -849,7 +868,7 @@ Begin VB.Form frmServer
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   2535
-         Left            =   -74880
+         Left            =   120
          ScaleHeight     =   167
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   223
@@ -930,7 +949,7 @@ Begin VB.Form frmServer
       Begin VB.Frame Frame6 
          Caption         =   "Comandos"
          Height          =   2415
-         Left            =   -72600
+         Left            =   2400
          TabIndex        =   98
          Top             =   480
          Width           =   2055
@@ -1037,7 +1056,7 @@ Begin VB.Form frmServer
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   2535
-         Left            =   4680
+         Left            =   -70320
          ScaleHeight     =   167
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   223
@@ -1128,7 +1147,7 @@ Begin VB.Form frmServer
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   3255
-         Left            =   0
+         Left            =   -75000
          ScaleHeight     =   215
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   311
@@ -1389,7 +1408,7 @@ Begin VB.Form frmServer
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   735
-         Left            =   4680
+         Left            =   -70320
          ScaleHeight     =   47
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   223
@@ -1603,43 +1622,43 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command3 
          Caption         =   "Curar"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   32
          Top             =   3240
          Width           =   1575
       End
       Begin VB.Timer tmrPlayerSave 
          Interval        =   60000
-         Left            =   -67560
+         Left            =   7440
          Top             =   0
       End
       Begin VB.Timer tmrSpawnMapItems 
          Interval        =   1000
-         Left            =   -65640
+         Left            =   9360
          Top             =   0
       End
       Begin VB.Timer tmrGameAI 
          Enabled         =   0   'False
          Interval        =   500
-         Left            =   -66120
+         Left            =   8880
          Top             =   0
       End
       Begin VB.Timer tmrShutdown 
          Enabled         =   0   'False
          Interval        =   1000
-         Left            =   -66600
+         Left            =   8400
          Top             =   0
       End
       Begin VB.Timer PlayerTimer 
          Enabled         =   0   'False
          Interval        =   5000
-         Left            =   -67080
+         Left            =   7920
          Top             =   0
       End
       Begin VB.Frame Frame3 
          Caption         =   "Classes"
          Height          =   975
-         Left            =   -72600
+         Left            =   2400
          TabIndex        =   26
          Top             =   2880
          Width           =   2055
@@ -1663,7 +1682,7 @@ Begin VB.Form frmServer
       Begin VB.Frame Frame2 
          Caption         =   "Server"
          Height          =   1575
-         Left            =   -70440
+         Left            =   4560
          TabIndex        =   25
          Top             =   2280
          Width           =   5535
@@ -1747,7 +1766,7 @@ Begin VB.Form frmServer
       Begin VB.Frame Frame1 
          Caption         =   "Scripts"
          Height          =   1455
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   20
          Top             =   2400
          Width           =   2055
@@ -1787,7 +1806,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command24 
          Caption         =   "Matar"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   19
          Top             =   3000
          Width           =   1575
@@ -1795,7 +1814,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command23 
          Caption         =   """Desenmudecer"""
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   18
          Top             =   2760
          Width           =   1575
@@ -1803,7 +1822,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command22 
          Caption         =   "Emudecer"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   17
          Top             =   2520
          Width           =   1575
@@ -1811,7 +1830,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command21 
          Caption         =   "Mensagem (PM)"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   16
          Top             =   2280
          Width           =   1575
@@ -1820,7 +1839,7 @@ Begin VB.Form frmServer
          Caption         =   "Mudar Informação"
          Enabled         =   0   'False
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   15
          Top             =   2040
          Width           =   1575
@@ -1828,7 +1847,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command19 
          Caption         =   "Ver Informação"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   14
          Top             =   1800
          Width           =   1575
@@ -1836,7 +1855,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command18 
          Caption         =   "Prisão (Motivo)"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   13
          Top             =   1560
          Width           =   1575
@@ -1844,7 +1863,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command17 
          Caption         =   "Prisão"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   12
          Top             =   1320
          Width           =   1575
@@ -1852,7 +1871,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command16 
          Caption         =   "Banir (Motivo)"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   11
          Top             =   1080
          Width           =   1575
@@ -1860,7 +1879,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command15 
          Caption         =   "Banir"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   10
          Top             =   840
          Width           =   1575
@@ -1868,7 +1887,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command14 
          Caption         =   "Kickar (Motivo)"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   9
          Top             =   600
          Width           =   1575
@@ -1876,7 +1895,7 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command13 
          Caption         =   "Kickar"
          Height          =   255
-         Left            =   8400
+         Left            =   -66600
          TabIndex        =   8
          Top             =   360
          Width           =   1575
@@ -1884,7 +1903,7 @@ Begin VB.Form frmServer
       Begin VB.CheckBox Check1 
          Caption         =   "Linhas"
          Height          =   255
-         Left            =   7080
+         Left            =   -67920
          TabIndex        =   4
          Top             =   3720
          Value           =   1  'Checked
@@ -1910,7 +1929,7 @@ Begin VB.Form frmServer
       End
       Begin MSWinsockLib.Winsock Socket 
          Index           =   0
-         Left            =   -65160
+         Left            =   9840
          Top             =   0
          _ExtentX        =   741
          _ExtentY        =   741
@@ -1919,7 +1938,7 @@ Begin VB.Form frmServer
       Begin VB.Frame Frame7 
          Caption         =   "Arquivos"
          Height          =   1215
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   118
          Top             =   1200
          Width           =   2055
@@ -1951,14 +1970,14 @@ Begin VB.Form frmServer
       Begin VB.CommandButton Command66 
          Caption         =   "Atualizar"
          Height          =   255
-         Left            =   5400
+         Left            =   -69600
          TabIndex        =   171
          Top             =   3720
          Width           =   1575
       End
       Begin MSComctlLib.ListView lvUsers 
          Height          =   3255
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   3
          Top             =   480
          Width           =   7815
@@ -2030,7 +2049,7 @@ Begin VB.Form frmServer
          BackStyle       =   0  'Transparent
          Caption         =   "Clique aqui para checar seu IP"
          Height          =   195
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   172
          Top             =   840
          Width           =   2175
@@ -2062,7 +2081,7 @@ Begin VB.Form frmServer
          BackStyle       =   0  'Transparent
          Caption         =   "Endereço IP:"
          Height          =   195
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   7
          Top             =   360
          Width           =   930
@@ -2072,7 +2091,7 @@ Begin VB.Form frmServer
          BackStyle       =   0  'Transparent
          Caption         =   "Porta:"
          Height          =   195
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   6
          Top             =   600
          Width           =   450
@@ -2082,7 +2101,7 @@ Begin VB.Form frmServer
          BackStyle       =   0  'Transparent
          Caption         =   "Total de Jogadores Online:"
          Height          =   195
-         Left            =   240
+         Left            =   -74760
          TabIndex        =   5
          Top             =   3780
          Width           =   1935
@@ -2103,7 +2122,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-' Copyright (c) 2008 - Elysium Source. Alguns direitos reservados.
+' Copyright (c) 2009 - Elysium Source. Alguns direitos reservados.
 ' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br
 ' Este código está licensiado sob a licença EGL.
 
