@@ -2970,11 +2970,11 @@ Sub HandleData(ByVal Index As Long, ByVal Data As String)
                     Set clsScriptCommands = New clsCommands
                     MyScript.ReadInCode App.Path & "\Scripts\Principal.txt", "Scripts\Principal.txt", MyScript.SControl, False
                     MyScript.SControl.AddObject "ScriptHardCode", clsScriptCommands, True
-                    Call TextAdd(frmServer.txtText(0), "Scripts reloaded.", True)
-                    Call PlayerMsg(Index, "Scripts reloaded.", White)
+                    Call TextAdd(frmServer.txtText(0), "Scripts atualizados.", True)
+                    Call PlayerMsg(Index, "Scripts atualizados.", White)
                 End If
 
-                Call AddLog(GetPlayerName(Index) & " updated the script.", ADMIN_LOG)
+                Call AddLog(GetPlayerName(Index) & " atualizou os scripts.", ADMIN_LOG)
             End If
 
             Exit Sub
@@ -3000,11 +3000,11 @@ Sub HandleData(ByVal Index As Long, ByVal Data As String)
                     Set clsScriptCommands = New clsCommands
                     MyScript.ReadInCode App.Path & "\Scripts\Principal.txt", "Scripts\Principal.txt", MyScript.SControl, False
                     MyScript.SControl.AddObject "ScriptHardCode", clsScriptCommands, True
-                    Call TextAdd(frmServer.txtText(0), "Scripts reloaded.", True)
-                    Call PlayerMsg(Index, "Scripts reloaded.", White)
+                    Call TextAdd(frmServer.txtText(0), "Scripts atualizados.", True)
+                    Call PlayerMsg(Index, "Scripts atualizados.", White)
                 End If
 
-                Call AddLog(GetPlayerName(Index) & " used the backup script.", ADMIN_LOG)
+                Call AddLog(GetPlayerName(Index) & " usou o script de backup.", ADMIN_LOG)
             End If
 
             Exit Sub

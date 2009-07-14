@@ -1,5 +1,5 @@
 Attribute VB_Name = "modCodeEdit"
-' Copyright (c) 2008 - Elysium Source. Alguns direitos reservados.
+' Copyright (c) 2009 - Elysium Source. Alguns direitos reservados.
 ' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br
 ' Este código está licensiado sob a licença EGL.
 
@@ -14,7 +14,6 @@ Public AFileName As String
 
 Public Sub ResetAllEditVals()
 
-'Save the Default values to the registry
 SaveSetting App.EXEName, "EditOptions", "c0a", "0"
 SaveSetting App.EXEName, "EditOptions", "c0b", "65535"
 SaveSetting App.EXEName, "EditOptions", "c0c", "0"
@@ -101,7 +100,7 @@ End Sub
 Public Sub GetEditColors()
 On Error GoTo EH
 Dim I As Integer
-'Get the color Values
+
 For I = 0 To 19
 ClrData(I).bgClr = CLng(GetSetting(App.EXEName, "EditOptions", "c" & I & "a", "0"))
 ClrData(I).frClr = CLng(GetSetting(App.EXEName, "EditOptions", "c" & I & "b", "0"))
@@ -129,5 +128,3 @@ Public Function txtProp(Num As Long) As Long
       Exit Function
  End Select
 End Function
-
-
