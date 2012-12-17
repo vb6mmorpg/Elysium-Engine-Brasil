@@ -1,6 +1,7 @@
 Attribute VB_Name = "modGeneral"
-' Copyright (c) 2009 - Elysium Source. Alguns direitos reservados.
-' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br
+' Copyright (c) 2012 - Elysium Source. Alguns direitos reservados.
+' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br (In memoriam)
+' Continuação do desenvolvimento por PRODEV Network @ http://prodevnetwork.com
 ' Este código está licensiado sob a licença EGL.
 
 Option Explicit
@@ -14,7 +15,7 @@ Public Const CLIENT_MINOR = 6
 Public Const CLIENT_REVISION = 0
 
 ' Senha de segurança
-Public Const SEC_CODE = "www.mmodev.com.br"
+Public Const SEC_CODE = "prodevnetwork.com"
 
 ' Respanwar itens
 Public SpawnSeconds As Long
@@ -1569,7 +1570,7 @@ Sub InitServer()
 
     If Not FileExist("Dados.ini") Then
         SpecialPutVar App.Path & "\Dados.ini", "CONFIG", "GameName", "Elysium Engine Brasil v2.6"
-        SpecialPutVar App.Path & "\Dados.ini", "CONFIG", "WebSite", "http://www.mmodev.com.br"
+        SpecialPutVar App.Path & "\Dados.ini", "CONFIG", "WebSite", "http://prodevnetwork.com"
         SpecialPutVar App.Path & "\Dados.ini", "CONFIG", "Port", 4000
         SpecialPutVar App.Path & "\Dados.ini", "CONFIG", "HPRegen", 1
         SpecialPutVar App.Path & "\Dados.ini", "CONFIG", "MPRegen", 1

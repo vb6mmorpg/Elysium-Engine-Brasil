@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Begin VB.Form frmLoad 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Elysium Engine Brasil"
@@ -106,8 +106,9 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-' Copyright (c) 2009 - Elysium Source. Alguns direitos reservados.
-' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br
+' Copyright (c) 2012 - Elysium Source. Alguns direitos reservados.
+' Tradução e revisão por MMODEV Brasil @ http://www.mmodev.com.br (In memoriam)
+' Continuação do desenvolvimento por PRODEV Network @ http://prodevnetwork.com
 ' Este código está licensiado sob a licença EGL.
 
 Option Explicit
